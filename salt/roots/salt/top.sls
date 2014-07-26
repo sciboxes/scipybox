@@ -1,0 +1,5 @@
+base:
+  '*':
+    - locale
+    - python
+    - virtualenv
