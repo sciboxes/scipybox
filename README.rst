@@ -84,8 +84,8 @@ see the following packages:
 
 Running the ipython notebook
 """"""""""""""""""""""""""""
-Before running the notebook, check the ip address of virtual machine. You can
-run ``ifconfig`` to do so.
+Before running the notebook, check the ip address (``<box_ip>``) of the virtual
+machine. You can run ``ifconfig`` to do so.
 
 In the virtual environment run:
 
@@ -94,7 +94,7 @@ In the virtual environment run:
    (env)vagrant@(...)~$ ipython notebook --ip=0.0.0.0 --no-browser
 
 You should then be able to access the notebook from the host machine at
-http:/<box_ip>:8888
+``http://<box_ip>:8888``
 
 
 Vagrant tips
