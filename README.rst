@@ -118,4 +118,25 @@ If the box is already running then you can use the ``reload`` command like so:
    $ vagrant reload --provision
 
 
+Running the salt states
+=======================
+
+You can execute the salt states manually within the virtual machine, using the
+`salt-call`_ command:
+
+.. code-block:: bash
+
+   vagrant@(...)~$ salt-call --local state.highstate -l debug
+
+This will "re-provision" the machine, and is usually faster than getting out of
+the virtual machine, and invoking ``vagrant reload --provision``.
+
+It is useful to use this approach when `troubleshooting`_ the provisioning
+phase, and trying different configurations to fix the issue. That is, you can
+modify one or more salt states, and run ``salt-call`` to see the effect.
+
+
+
 .. _vagrant bash completion: https://github.com/kura/vagrant-bash-completion
+.. _salt-call: http://docs.saltstack.com/en/latest/topics/tutorials/quickstart.html#salt-call
+.. _troubleshooting: http://docs.saltstack.com/en/latest/topics/troubleshooting/#using-salt-call
