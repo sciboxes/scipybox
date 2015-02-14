@@ -25,17 +25,29 @@ virtualenv:
     - require:
       - pkg: python-pip
 
+base_virtualenv:
+  virtualenv.managed:
+    - name: /home/vagrant/env/
+    - user: vagrant
+    - no_chown: True
+    - cwd: /home/vagrant/
+    - system_site_packages: False
+    - requirements: /home/vagrant/requirements/base.txt
+    - verbose: True
+    - require:
+      - pip: virtualenv
+
 scipy_virtualenv:
   virtualenv.managed:
     - name: /home/vagrant/env/
     - user: vagrant
     - no_chown: True
-    - cwd: /home/vagrant/src
+    - cwd: /home/vagrant/
     - system_site_packages: False
-    - requirements: /home/vagrant/src/requirements.txt
+    - requirements: /home/vagrant/requirements/scipy.txt
     - verbose: True
     - require:
-      - pip: virtualenv
+      - virtualenv: base_virtualenv
       - pkg: libfreetype6-dev
       - pkg: pkg-config
       - pkg: libblas-dev
