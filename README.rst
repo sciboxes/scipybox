@@ -67,19 +67,23 @@ Active it
 
 .. code-block:: bash
 
-   vagrant@(...)~$ source env/bin/activate
+   vagrant@(...)~$ source ~/env/bin/activate
 
 The provisioning phase should also install the python packages listed under
-``src/requirements.txt``. Consequently, if you run ``pip freeze`` you should
-see the following packages:
+``~/requirements/*.txt``. You can run the small script ``~/src/versions.py`` to
+check that everything is there.
 
-* jinja2
-* ipython
-* matplotlib
-* numpy
-* pyzmq
-* scipy
-* tornado
+.. code-block:: bash
+
+   $ python src/versions.py
+   IPython: 2.4.1
+   jinja2: 2.7.3
+   matplotlib: 1.4.2
+   numpy: 1.9.1
+   scipy: 0.15.1
+   tornado: 4.1
+   zmq: 14.5.0
+
 
 
 Running the ipython notebook
