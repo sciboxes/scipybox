@@ -37,14 +37,12 @@ base_virtualenv:
     - require:
       - pip: virtualenv
 
-scipy_virtualenv:
-  virtualenv.managed:
-    - name: /home/vagrant/env/
+scipy:
+  pip.installed:
+    - name: scipy==0.15.1
     - user: vagrant
-    - no_chown: True
     - cwd: /home/vagrant/
-    - system_site_packages: False
-    - requirements: /home/vagrant/requirements/scipy.txt
+    - bin_env: /home/vagrant/env/
     - verbose: True
     - require:
       - virtualenv: base_virtualenv
