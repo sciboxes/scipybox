@@ -75,7 +75,7 @@ The provisioning phase should also install the python packages listed under
 
 .. code-block:: bash
 
-   $ python src/versions.py
+   $ python ~/src/versions.py
    IPython: 2.4.1
    jinja2: 2.7.3
    matplotlib: 1.4.2
