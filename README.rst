@@ -70,8 +70,8 @@ Active it
    vagrant@(...)~$ source ~/env/bin/activate
 
 The provisioning phase should also install the python packages listed under
-``~/requirements/*.txt``. You can run the small script ``~/src/versions.py`` to
-check that everything is there.
+``~/requirements.txt`` and ``scipy``. You can run the small script
+``~/src/versions.py`` to check that everything is there.
 
 .. code-block:: bash
 
