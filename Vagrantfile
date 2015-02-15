@@ -15,7 +15,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "private_network", type: "dhcp"
   config.ssh.forward_agent = true
   config.vm.synced_folder "src/", "/home/vagrant/src/"
-  config.vm.synced_folder "requirements", "/home/vagrant/requirements"
 
   # speed up provisioning by enabling caching
   if Vagrant.has_plugin?("vagrant-cachier")
