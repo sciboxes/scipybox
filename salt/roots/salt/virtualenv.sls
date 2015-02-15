@@ -32,7 +32,7 @@ base_virtualenv:
     - no_chown: True
     - cwd: /home/vagrant/
     - system_site_packages: False
-    - requirements: /home/vagrant/requirements/base.txt
+    - requirements: /vagrant/requirements.txt
     - verbose: True
     - require:
       - pip: virtualenv
