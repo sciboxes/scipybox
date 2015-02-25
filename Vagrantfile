@@ -1,7 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+LAB_DIR = ENV["LAB_DIR"] || "lab/"
+
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -14,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "private_network", type: "dhcp"
   config.ssh.forward_agent = true
-  config.vm.synced_folder "src/", "/home/vagrant/src/"
+  config.vm.synced_folder LAB_DIR, "/home/vagrant/lab/"
 
   # speed up provisioning by enabling caching
   if Vagrant.has_plugin?("vagrant-cachier")
