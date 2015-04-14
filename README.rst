@@ -1,3 +1,7 @@
+.. image:: https://travis-ci.org/sbellem/scipybox.svg
+   :target: https://travis-ci.org/sbellem/scipybox
+
+
 ********
 scipybox
 ********
