@@ -1,2 +1,4 @@
 file_client: local
-master: localhost
+
+grains:
+  role: vagrant
