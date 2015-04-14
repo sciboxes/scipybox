@@ -22,8 +22,15 @@ def test_python_states():
         assert v['result'], (k, v)
 
 
-def test_virtualenv_states():
+def test_virtualenv_base_states():
     caller = salt.client.Caller()
-    output = caller.sminion.functions['state.sls']('virtualenv')
+    output = caller.sminion.functions['state.sls']('virtualenv.base')
+    for k, v in output.items():
+        assert v['result'], (k, v)
+
+
+def test_virtualenv_scilibs_states():
+    caller = salt.client.Caller()
+    output = caller.sminion.functions['state.sls']('virtualenv.scilibs')
     for k, v in output.items():
         assert v['result'], (k, v)

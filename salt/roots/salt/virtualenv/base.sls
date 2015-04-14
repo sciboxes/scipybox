@@ -38,6 +38,6 @@ base_virtualenv:
     - no_chown: True
     - cwd: /home/vagrant/
     - system_site_packages: False
-    - requirements: {{ pillar['req_dir'] }}/requirements.txt
+    - requirements: {{ pillar['req_dir'] }}/requirements/base.txt
     - require:
       - pip: virtualenv
