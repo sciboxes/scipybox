@@ -1,3 +1,9 @@
+{% set home = pillar['home'] %}
+{% set user = pillar['user'] %}
+
+include:
+  - python
+
 #### for matplotlib
 libfreetype6-dev:
   pkg:
@@ -27,12 +33,12 @@ virtualenv:
 
 base_virtualenv:
   virtualenv.managed:
-    - name: /home/vagrant/env/
-    - user: vagrant
+    - name: {{ home }}/env/
+    - user: {{ user }}
     - no_chown: True
     - cwd: /home/vagrant/
     - system_site_packages: False
-    - requirements: /vagrant/requirements.txt
+    - requirements: {{ pillar['req_dir'] }}/requirements.txt
     - verbose: True
     - require:
       - pip: virtualenv
