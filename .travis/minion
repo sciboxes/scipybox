@@ -1,4 +1,4 @@
 file_client: local
 
 grains:
-  role: vagrant
+  role: travis
