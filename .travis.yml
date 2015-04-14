@@ -10,7 +10,7 @@ before_install:
   - curl -o install_salt.sh -L http://bootstrap.saltstack.com
   - sudo sh install_salt.sh git v2015.2.0rc2
   - sudo cp .travis/minion /etc/salt/minion
-  - sudo cp requirements.txt /home/travis/
+  - sudo cp -r requirements /home/travis/
 
 install:
   - sudo cp -r salt/roots/salt/ /srv/salt/
@@ -22,5 +22,6 @@ script:
   - sudo salt-call state.show_highstate --local --retcode-passthrough
   - sudo salt-call state.sls locale --hard-crash --local -l debug
   - sudo salt-call state.sls python --hard-crash --local -l debug
-  - sudo salt-call state.sls virtualenv --hard-crash --local -l debug
+  - sudo salt-call state.sls virtualenv.base --hard-crash --local -l debug
+  - sudo salt-call state.sls virtualenv.scilibs --hard-crash --local -l debug
   - sudo py.test -v tests.py
