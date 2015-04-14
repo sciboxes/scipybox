@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-LAB_DIR = ENV["LAB_DIR"] || "lab/"
+LABDIR = ENV["LABDIR"] || "lab/"
 
 VAGRANTFILE_API_VERSION = "2"
 
@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "private_network", type: "dhcp"
   config.ssh.forward_agent = true
-  config.vm.synced_folder LAB_DIR, "/home/vagrant/lab/"
+  config.vm.synced_folder LABDIR, "/home/vagrant/lab/"
 
   # speed up provisioning by enabling caching
   if Vagrant.has_plugin?("vagrant-cachier")
