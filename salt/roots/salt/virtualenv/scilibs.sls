@@ -21,18 +21,18 @@ liblapack-dev:
 gfortran:
   pkg.installed
 
-virtualenv_scipy:
+virtualenv_matplotlib:
   pip.installed:
-    - name: scipy
+    - name: matplotlib
     - bin_env: {{ home }}/env/
     - user: {{ pillar['user'] }}
     - cwd: {{ home }}
     - require:
       - pip: virtualenv_pip
 
-virtualenv_matplotlib:
+virtualenv_scipy:
   pip.installed:
-    - name: matplotlib
+    - name: scipy
     - bin_env: {{ home }}/env/
     - user: {{ pillar['user'] }}
     - cwd: {{ home }}
