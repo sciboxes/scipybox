@@ -4,28 +4,6 @@
 include:
   - python
 
-#### for matplotlib
-libfreetype6-dev:
-  pkg:
-    - installed
-
-pkg-config:
-  pkg:
-    - installed
-
-### for scipy
-libblas-dev:
-  pkg:
-    - installed
-
-liblapack-dev:
-  pkg:
-    - installed
-
-gfortran:
-  pkg:
-    - installed
-
 virtualenv:
   pip.installed:
     - require:
