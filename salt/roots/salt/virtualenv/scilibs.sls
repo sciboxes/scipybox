@@ -34,4 +34,4 @@ virtualenv_scilibs:
     - user: {{ pillar['user'] }}
     - cwd: {{ home }}
     - require:
-      - virtualenv: base_virtualenv
+      - pip: virtualenv_pip
