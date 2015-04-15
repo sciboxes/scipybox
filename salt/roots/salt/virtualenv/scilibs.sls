@@ -6,25 +6,20 @@ include:
 
 #### for matplotlib
 libfreetype6-dev:
-  pkg:
-    - installed
+  pkg.installed
 
 pkg-config:
-  pkg:
-    - installed
+  pkg.installed
 
 ### for scipy
 libblas-dev:
-  pkg:
-    - installed
+  pkg.installed
 
 liblapack-dev:
-  pkg:
-    - installed
+  pkg.installed
 
 gfortran:
-  pkg:
-    - installed
+  pkg.installed
 
 virtualenv_scipy:
   pip.installed:
