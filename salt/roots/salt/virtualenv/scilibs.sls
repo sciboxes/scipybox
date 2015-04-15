@@ -26,10 +26,18 @@ gfortran:
   pkg:
     - installed
 
-virtualenv_scilibs:
+virtualenv_scipy:
   pip.installed:
-    - requirements: {{ pillar['req_dir'] }}/requirements/scilibs.txt
-    - no_chown: True
+    - name: scipy
+    - bin_env: {{ home }}/env/
+    - user: {{ pillar['user'] }}
+    - cwd: {{ home }}
+    - require:
+      - pip: virtualenv_pip
+
+virtualenv_matplotlib:
+  pip.installed:
+    - name: matplotlib
     - bin_env: {{ home }}/env/
     - user: {{ pillar['user'] }}
     - cwd: {{ home }}
