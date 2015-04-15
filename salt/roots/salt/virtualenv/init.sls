@@ -1,3 +1,4 @@
 include:
   - virtualenv.base
-  - virtualenv.scilibs
+  - virtualenv.matplotlib
+  - virtualenv.scipy

@@ -23,5 +23,6 @@ script:
   - sudo salt-call state.sls locale --hard-crash --local -l debug
   - sudo salt-call state.sls python --hard-crash --local -l debug
   - sudo salt-call state.sls virtualenv.base --hard-crash --local -l debug
-  - sudo salt-call state.sls virtualenv.scilibs --hard-crash --local -l debug
+  - sudo salt-call state.sls virtualenv.matplotlib --hard-crash --local -l debug
+  - travis_wait sudo salt-call state.sls virtualenv.scipy --hard-crash --local -l debug
   - sudo py.test -v tests.py
